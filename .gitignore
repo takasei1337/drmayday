@@ -1,0 +1,41 @@
+# Root .gitignore for DrMayDay Project
+
+# Operating System
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak
+
+# IDE & Editors
+.idea/
+.vscode/
+*.iml
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Backend (Spring Boot / Maven)
+backend/target/
+backend/.mvn/wrapper/maven-wrapper.jar
+backend/logs/
+backend/*.log
+backend/application.properties
+
+# Frontend (React / Vite / Node)
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+frontend/*.local
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/pnpm-debug.log*
+
+# General Logs
+*.log
