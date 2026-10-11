@@ -10,7 +10,24 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+
+# Environment variables & Secrets (Bảo mật thông tin)
+.env
+.env.*
 *.local
+!.env.example
+!.env.template
+!.env.sample
+
+# Package manager & Auth tokens
+.npmrc
+.yarnrc
+
+# Keys & Certificates
+*.pem
+*.key
+*.crt
+*.cer
 
 # Editor directories and files
 .vscode/*

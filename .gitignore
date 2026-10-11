@@ -1,29 +1,163 @@
 # Root .gitignore for DrMayDay Project
 
-# Operating System
+# =======================================================
+# 1. Operating System & Temporary Files
+# =======================================================
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
 *.tmp
 *.bak
+*.sw?
+*~
 
-# IDE & Editors
+# =======================================================
+# 2. IDE & Editors
+# =======================================================
 .idea/
 .vscode/
+!.vscode/extensions.json
 *.iml
+*.iws
+*.ipr
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
-*.sw?
+.classpath
+.project
+.settings/
+.springBeans
+.sts4-cache/
 
-# Backend (Spring Boot / Maven)
+# =======================================================
+# 3. Environment Variables & Secrets (Bảo mật thông tin)
+# =======================================================
+.env
+.env.*
+*.env
+# Giữ lại các file mẫu template / example
+!.env.example
+!.env.template
+!.env.sample
+!.env.dist
+!frontend/.env.example
+!backend/.env.example
+
+# =======================================================
+# 4. Spring Boot & Backend Sensitive Configurations
+# =======================================================
+**/application.properties
+**/application.yml
+**/application.yaml
+**/application-*.properties
+**/application-*.yml
+**/application-*.yaml
+# Giữ lại file template cấu hình mẫu
+!**/application*.example
+!**/application*.template
+
+# =======================================================
+# 5. Private Keys, Certificates & Keystores (SSL/TLS, SSH, JWT)
+# =======================================================
+*.pem
+*.key
+*.pkcs12
+*.pfx
+*.p12
+*.jks
+*.keystore
+*.truststore
+*.crt
+*.cer
+*.der
+*.csr
+*.gpg
+*.pgp
+secring.*
+id_rsa*
+id_dsa*
+id_ecdsa*
+id_ed25519*
+known_hosts
+
+# =======================================================
+# 6. Cloud, API Keys & 3rd Party Credentials (Firebase, AWS, GCP, MinIO)
+# =======================================================
+*firebase-adminsdk*.json
+google-services.json
+GoogleService-Info.plist
+*service-account*.json
+gcp-credentials*.json
+client_secret*.json
+oauth-credentials.json
+.aws/
+aws-credentials*
+credentials.csv
+.npmrc
+.yarnrc
+.docker/
+docker-compose.override.yml
+
+# =======================================================
+# 7. Patient Media, Uploads & Database Dumps / Backups
+# =======================================================
+uploads/
+**/uploads/
+storage/
+**/storage/
+backend/media/
+backend/uploads/
+backend/storage/
+*.sql.gz
+*.dump
+*.rdb
+*.sqlite
+*.sqlite3
+*.db
+backup/
+backups/
+# Ngoại lệ cho migration scripts chuẩn
+!**/src/main/resources/**/migration/*.sql
+!**/schema.sql
+
+# =======================================================
+# 8. Tokens, Password Vaults & Secrets
+# =======================================================
+*.token
+tokens.json
+secrets/
+secret/
+*.secret
+*.kdbx
+*.vault
+vault-password*
+master.key
+
+# =======================================================
+# 9. Java Heap Dumps & Crash Logs (Tránh lộ memory chứa credentials)
+# =======================================================
+*.hprof
+*.heapdump
+hs_err_pid*
+replay_pid*
+core.*
+
+# =======================================================
+# 10. Backend Build & Logs (Spring Boot / Maven)
+# =======================================================
 backend/target/
 backend/.mvn/wrapper/maven-wrapper.jar
 backend/logs/
 backend/*.log
-backend/application.properties
 
-# Frontend (React / Vite / Node)
+# =======================================================
+# 11. Frontend Build & Dependencies (React / Vite / Node)
+# =======================================================
 frontend/node_modules/
 frontend/dist/
 frontend/dist-ssr/
@@ -37,5 +171,12 @@ frontend/yarn-debug.log*
 frontend/yarn-error.log*
 frontend/pnpm-debug.log*
 
-# General Logs
+# =======================================================
+# 12. General Logs
+# =======================================================
+logs/
 *.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*

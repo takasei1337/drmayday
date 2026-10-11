@@ -31,3 +31,68 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Security & Secrets (Bảo mật thông tin) ###
+.env
+.env.*
+*.env
+!.env.example
+!.env.template
+
+# Spring Boot sensitive configurations & local overrides
+application.properties
+application.yml
+application.yaml
+application-*.properties
+application-*.yml
+application-*.yaml
+!application*.example
+!application*.template
+
+# Certificates, Keys & Keystores (SSL/TLS, JWT RSA, Keystore)
+*.pem
+*.key
+*.pkcs12
+*.pfx
+*.p12
+*.jks
+*.keystore
+*.truststore
+*.crt
+*.cer
+*.der
+*.csr
+
+# Cloud & 3rd Party Credentials (Firebase, AWS, GCP)
+*firebase-adminsdk*.json
+google-services.json
+*service-account*.json
+gcp-credentials*.json
+client_secret*.json
+oauth-credentials.json
+.aws/
+aws-credentials*
+
+# Uploads, Media & Patient attachments
+uploads/
+storage/
+media/
+
+# Database dumps & local databases
+*.dump
+*.rdb
+*.sqlite
+*.sqlite3
+*.db
+!src/main/resources/**/migration/*.sql
+!schema.sql
+
+# Java Heap Dumps & Crash logs
+*.hprof
+*.heapdump
+hs_err_pid*
+replay_pid*
+
+# Logs
+logs/
+*.log
